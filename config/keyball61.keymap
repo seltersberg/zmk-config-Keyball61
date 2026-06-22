@@ -34,35 +34,35 @@
         larro: larro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp AMPS &kp L &kp A &kp R &kp R &kp SEMI>;
+            bindings = <&kp BSLH &kp L &kp E &kp F &kp T &kp A &kp R &kp R &kp O &kp W>;
             label = "LARRO";
         };
 
         rarro: rarro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp AMPS &kp R &kp A &kp R &kp R &kp SEMI>;
+            bindings = <&kp BSLH &kp R &kp I &kp G &kp H &kp T &kp A &kp R &kp R &kp O &kp W>;
             label = "RARRO";
         };
 
         uarro: uarro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp AMPS &kp U &kp A &kp R &kp R &kp SEMI>;
+            bindings = <&kp BSLH &kp U &kp P &kp A &kp R &kp R &kp O &kp W>;
             label = "UARRO";
         };
 
         darro: darro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp AMPS &kp D &kp A &kp R &kp R &kp SEMI>;
+            bindings = <&kp BSLH &kp D &kp O &kp W &kp N &kp A &kp R &kp R &kp O &kp W>;
             label = "DARRO";
         };
 
         harro: harro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp AMPS &kp H &kp A &kp R &kp R &kp SEMI>;
+            bindings = <&kp BSLH &kp L &kp E &kp F &kp T &kp R &kp I &kp G &kp H &kp T &kp A &kp R &kp R &kp O &kp W>;
             label = "HARRO";
         };
     };
