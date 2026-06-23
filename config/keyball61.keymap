@@ -69,7 +69,14 @@
         mu: mu {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kt LEFT_ALT &kp KP_N2 &kp KP_N3 &kp KP_N0 &kt LEFT_ALT>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp KP_N2 &kp KP_N3 &kp KP_N0>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
             label = "MU";
         };
     };
