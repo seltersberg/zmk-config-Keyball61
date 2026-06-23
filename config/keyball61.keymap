@@ -34,36 +34,43 @@
         larro: larro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp BSLH &kp L &kp E &kp F &kp T &kp A &kp R &kp R &kp O &kp W>;
+            bindings = <&kp DLLR &kp BSLH &kp L &kp E &kp F &kp T &kp A &kp R &kp R &kp O &kp W &kp DLLR>;
             label = "LARRO";
         };
 
         rarro: rarro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp BSLH &kp R &kp I &kp G &kp H &kp T &kp A &kp R &kp R &kp O &kp W>;
+            bindings = <&kp DLLR &kp BSLH &kp R &kp I &kp G &kp H &kp T &kp A &kp R &kp R &kp O &kp W &kp DLLR>;
             label = "RARRO";
         };
 
         uarro: uarro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp BSLH &kp U &kp P &kp A &kp R &kp R &kp O &kp W>;
+            bindings = <&kp DLLR &kp BSLH &kp U &kp P &kp A &kp R &kp R &kp O &kp W &kp DLLR>;
             label = "UARRO";
         };
 
         darro: darro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp BSLH &kp D &kp O &kp W &kp N &kp A &kp R &kp R &kp O &kp W>;
+            bindings = <&kp DLLR &kp BSLH &kp D &kp O &kp W &kp N &kp A &kp R &kp R &kp O &kp W &kp DLLR>;
             label = "DARRO";
         };
 
         harro: harro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp BSLH &kp L &kp E &kp F &kp T &kp R &kp I &kp G &kp H &kp T &kp A &kp R &kp R &kp O &kp W>;
+            bindings = <&kp DLLR &kp BSLH &kp L &kp E &kp F &kp T &kp R &kp I &kp G &kp H &kp T &kp A &kp R &kp R &kp O &kp W &kp DLLR>;
             label = "HARRO";
+        };
+
+        mu: mu {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LEFT_ALT &kp KP_N2 &kp KP_N3 &kp KP_N0 &kt LEFT_ALT>;
+            label = "MU";
         };
     };
 
@@ -97,7 +104,7 @@
             label = "SYM";
             bindings = <
 &bt BT_CLR    &kp EXCLAMATION    &kp AT_SIGN        &kp HASH      &kp DOLLAR    &kp PERCENT                  &kp CARET       &kp AMPERSAND  &kp ASTERISK      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
-&out OUT_TOG  &uc 0x00B0 0x03BC  &bt BT_SEL 0       &uc 0x20AC 0  &trans        &trans                       &trans          &uc UC_DE_UE   &trans            &uc UC_DE_OE          &kp C_PLAY_PAUSE       &trans
+&out OUT_TOG  &uc 0x00B0 0x03BC  &bt BT_SEL 0       &uc 0x20AC 0  &trans        &trans                       &trans          &uc UC_DE_UE   &mu               &uc UC_DE_OE          &kp C_PLAY_PAUSE       &trans
 &trans        &uc UC_DE_AE       &uc 0x00DF 0x1E9E  &bt BT_SEL 1  &bt BT_SEL 2  &trans                       &kp MINUS       &kp EQUAL      &kp LEFT_BRACKET  &kp RIGHT_BRACKET     &kp C_VOLUME_UP        &bootloader
 &trans        &trans             &trans             &trans        &trans        &trans       &trans  &trans  &kp UNDERSCORE  &kp PLUS       &trans            &trans                &kp C_VOL_DN           &trans
 &trans        &trans             &trans             &trans        &trans        &trans       &trans  &trans  &trans                                                                 &trans                 &trans
