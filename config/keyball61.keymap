@@ -79,6 +79,62 @@
 
             label = "MU";
         };
+
+        altleft: altleft {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp KP_N2 &kp KP_N7>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "ALTLEFT";
+        };
+
+        altright: altright {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp KP_N2 &kp KP_N6>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "ALTRIGHT";
+        };
+
+        altup: altup {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp KP_N2 &kp KP_N4>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "ALTUP";
+        };
+
+        altdown: altdown {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp KP_N2 &kp KP_N5>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "ALTDOWN";
+        };
     };
 
     keymap {
@@ -164,11 +220,11 @@
 
         Arrows {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &larro  &uarro  &darro  &rarro  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                          &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans    &trans  &trans    &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &altleft  &altup  &altdown  &altright  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &larro    &uarro  &darro    &rarro     &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans    &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                              &trans     &trans
             >;
         };
     };
