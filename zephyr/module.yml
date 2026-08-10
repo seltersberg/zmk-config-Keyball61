@@ -1,0 +1,4 @@
+name: zmk-vfx-keyball61-numlock
+build:
+  cmake: .
+  kconfig: Kconfig

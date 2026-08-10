@@ -1,0 +1,5 @@
+config KEYBALL61_NUMLOCK_SCREEN
+    bool "Show Num Lock state on the Keyball61 central OLED"
+    default n
+    depends on ZMK_DISPLAY
+    depends on ZMK_SPLIT_ROLE_CENTRAL
