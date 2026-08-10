@@ -103,6 +103,14 @@ lv_obj_t *zmk_display_status_screen(void) {
         screen
     );
 
+    lv_obj_set_style_text_font(
+        zmk_widget_layer_status_obj(
+            &layer_status_widget
+        ),
+        lv_theme_get_font_small(screen),
+        LV_PART_MAIN
+    );
+
     lv_obj_align(
         zmk_widget_layer_status_obj(
             &layer_status_widget
