@@ -13,6 +13,23 @@
 
 #define NUM_LOCK_MASK BIT(0)
 
+/*
+ * Keep the custom screen independent of LVGL's dynamically allocated theme.
+ * These checks intentionally turn a future unsafe configuration into a build
+ * error instead of letting it reach the keyboard.
+ */
+#if IS_ENABLED(CONFIG_LV_USE_THEME_MONO)
+#error "KEYBALL61_NUMLOCK_SCREEN must not enable LV_USE_THEME_MONO"
+#endif
+
+#if !IS_ENABLED(CONFIG_LV_FONT_MONTSERRAT_12)
+#error "KEYBALL61_NUMLOCK_SCREEN requires LV_FONT_MONTSERRAT_12"
+#endif
+
+#if CONFIG_LV_Z_MEM_POOL_SIZE < 4096
+#error "KEYBALL61_NUMLOCK_SCREEN requires at least a 4096-byte LVGL pool"
+#endif
+
 static lv_obj_t *num_lock_label;
 
 struct num_lock_state {
@@ -65,6 +82,17 @@ static struct zmk_widget_layer_status layer_status_widget;
 lv_obj_t *zmk_display_status_screen(void) {
     lv_obj_t *screen = lv_obj_create(NULL);
 
+    if (screen == NULL) {
+        return NULL;
+    }
+
+    /* Montserrat contains the LVGL symbols used by ZMK's status widgets. */
+    lv_obj_set_style_text_font(
+        screen,
+        &lv_font_montserrat_12,
+        LV_PART_MAIN
+    );
+
 #if IS_ENABLED(CONFIG_ZMK_WIDGET_BATTERY_STATUS)
     zmk_widget_battery_status_init(
         &battery_status_widget,
@@ -103,14 +131,6 @@ lv_obj_t *zmk_display_status_screen(void) {
         screen
     );
 
-    lv_obj_set_style_text_font(
-        zmk_widget_layer_status_obj(
-            &layer_status_widget
-        ),
-        lv_theme_get_font_small(screen),
-        LV_PART_MAIN
-    );
-
     lv_obj_align(
         zmk_widget_layer_status_obj(
             &layer_status_widget
@@ -122,14 +142,17 @@ lv_obj_t *zmk_display_status_screen(void) {
 #endif
 
     num_lock_label = lv_label_create(screen);
-    lv_label_set_text(num_lock_label, "N:OFF");
 
-    lv_obj_align(
-        num_lock_label,
-        LV_ALIGN_TOP_MID,
-        0,
-        0
-    );
+    if (num_lock_label != NULL) {
+        lv_label_set_text(num_lock_label, "N:OFF");
+
+        lv_obj_align(
+            num_lock_label,
+            LV_ALIGN_TOP_MID,
+            0,
+            0
+        );
+    }
 
     keyball61_num_lock_init();
 

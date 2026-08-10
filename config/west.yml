@@ -9,13 +9,14 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: v0.3
+      # Pin the exact source revision used for the verified firmware build.
+      revision: edf5c0814fd3ea202e43aad2d68fd32e882a518c
       import: app/west.yml
     - name: zmk-unicode
       remote: urob
-      revision: v0.3
+      revision: 3e8ca744e5c3b6f430b3713f3e45b806ce89be7b
     - name: zmk-pmw3610-driver
       remote: mochukeeb
-      revision: main
+      revision: 77a61804cf0d51a495a22e60d1a3115568a441df
   self:
     path: config
